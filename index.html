@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tomato Index</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto+Serif:ital,wght@1,900&family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ec035bfaab.js" crossorigin="anonymous"></script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="top-section">
+            <div class="imagetext">
+                <h1>My Tomato Index</h1>
+            </div>
+        </section>
+
+        <section class="header_buttons">
+            <nav class="header-links">
+                <div class="dropdown">
+                    <button class="dropbtn">I own
+                    <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="tomatoes.html">Tomatoes</a>
+                        <a href="chillies.html">Chillies</a>
+                        <a href="houseplants.html">Houseplants</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">I want
+                    <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="">Tomatoes</a>
+                        <a href="">Chillies</a>
+                        <a href="">Houseplants</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Filter
+                    <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content">
+                        <div class="dc-section">
+                            <h4>Season</h4>
+                            <a href="">Very Early Season</a>
+                            <a href="">Early Season</a>
+                            <a href="">Mid Season</a>
+                            <a href="">Late Season</a>
+                        </div>
+                        <div class="dc-section">
+                            <h4>Color</h4>
+                            <a href="">Cherry</a>
+                            <a href="">Purple - Black</a>
+                            <a href="">Red</a>
+                            <a href="">Pink</a>
+                            <a href="">Yellow - Orange</a>
+                            <a href="">Bi-Colored</a>
+                            <a href="">Other Colors</a>
+                        </div>
+                        <div class="dc-section">
+                            <h4>Cooler Climate Tomatoes</h4>
+                            <a href="">Cooler Climate</a>
+                        </div>
+                        <div class="dc-section">
+                            <h4>RARE Varieties</h4>
+                            <a href="">RARE</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <form class="header-search">
+                <input type="search" id="site-search" name="q" placeholder="Enter Tomato Name">
+                <button class="search-button">Search</button>
+            </form>
+        </section>
+    </header>
+
+    <hr>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Up</button>
+
+    <div class="hero_section">
+        <div class="hero_text">
+            <h2>What Tomato varietes are you interested in?</h2>
+            <p>Discover dozens of unique varietes here</p>
+        </div>
+
+        <section class="hero_buttons">
+            <div class="varieties">
+                <img src="images/tomato1.jpg" alt="Tomato image">
+                <a href="#Indeterminate" class="nav-link">Indeterminate</a>
+            </div>
+
+            <div class="varieties">
+                <img src="images/tomato2.jpg" alt="Tomato image">
+                <a href="#Determinate" class="nav-link">Determinate</a>
+            </div>
+        </section>
+    </div>
+
+    <hr>
+
+    <section>
+        <div class="list_header">
+            <p>My Tomatoes</p>
+        </div>
+
+        <div class="lists_section">
+            <div class="list_counter">
+                <h3>Varieties counter:</h3>
+                <div class="vr_count" id="variantCount"></div>
+            </div>
+
+            <button class="show" aria-haspopup="true">Add new variety</button>
+            <div class="mask" role="dialog"></div>
+            <div class="modal" role="alert">
+                <button class="close" role="button">X</button>
+                <h3>Add your new variety</h3>
+                <form role="form" method="POST" action="">
+                    <input type="hidden" name="_token" value="">
+                    <div class="form-group">
+                        <label class="control-label">Name:</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="list-label">Days:</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="days" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="list-label">Color:</label>
+                        <select class="mod-color" id="modal_color" name="m-color">
+                                <option value="cherry">Cherry</option>
+                                <option value="Purple-Black">Purple-Black</option>
+                                <option value="red">Red</option>
+                                <option value="pink">Pink</option>
+                                <option value="yellow-orange">Yellow-Orange</option>
+                                <option value="bi-colored">Bi-Colored</option>
+                                <option value="other_colors">Other Colors</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="list-label">Season:</label>
+                        <select class="mod-season" id="modal_season" name="m-season">
+                                <option value="very_early">Very Early</option>
+                                <option value="early">Early</option>
+                                <option value="mid_season">Mid-Season</option>
+                                <option value="late">Late</option>
+                            </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="list-label">Description:</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="color">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="mod-btn">
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="tlist_sections">
+            <ul class="custom-marker-list" id="list"></ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="wsl-header">
+            <p>My Wishlist</p>
+        </div>
+
+        <div class="wishlist_section">
+            <button id="showBtn" class="show_wsl" aria-haspopup="true">Add new wishlist variety</button>
+            <div id="form2" class="mask_wsl" role="dialog"></div>
+            <div class="modal_wsl" role="alert">
+                <button id="closeBtnTwo" class="close" role="button">X</button>
+                <h3>Add your new variety</h3>
+                <form role="form" method="POST" action="">
+                    <input type="hidden" name="_token" value="">
+                    <div class="form-group">
+                        <label class="control-label">Name:</label>
+                        <div>
+                            <input type="text" class="form-control input-lg" name="name" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="list-label">Website URL:</label>
+                        <div>
+                            <input type="url" class="form-control input-lg" name="website-url" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="mod-btn">
+                            <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="tlist_sections">
+            <ul class="custom-marker-wsl" id="wishlist"></ul>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="idt_dt_sections">
+        <div id="Indeterminate" class="varieties_sections">
+            <p>Indeterminate Tomatoes</p>
+        </div>
+        <section>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Aker's Plum.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Aker's Plum - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A family heirloom tomato of Carl Aker of Pennsylvania. These tomato seeds produce a healthy, long-lasting, regular-leaf tomato plant that yields abundant crops of 2.5 x 3.5-inch (6-8 oz.) brilliant red, jumbo plum-shaped
+                                        tomatoes. These tomatoes have thick, meaty walls with excellent taste. A fantastic multi-purpose tomato suitable for juice, cooking, salads.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Amana Orange.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Amana Orange - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td> Huge heirloom beefsteak tomato named for the Amana Colonies in Iowa. These organic tomato seeds produce big, regular leaf plants that produce above average amounts of beautiful light-orange, irregular shaped (fluted)
+                                        heirloom tomatoes that can grow to 2 pounds or more, with an average diameter of 5 inches. Excellent sweet, almost tropical fruit flavors. These tomatoes have thick, meaty walls with excellent taste. A fantastic
+                                        multi-purpose tomato suitable for juice, cooking, salads.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Amber Colored.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Amber Colored - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td> Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A favorite Russian heirloom from an Ukrainian family living near River Don. Large, bushy, semi-determinant, plant that produces an abundant crop of 2-inch amber-colored globes. Very good sweet flavors with just enough
+                                        acid balance to enhance the taste.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Amish Red.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Amish Red - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td> A wonderful tomato! This tall, indeterminate, regular-leaf tomato plant yields an abundant crop of meaty, 1 1/2-inch long, oblong-shaped, bright-red tomatoes with sharply-pointed end. Amish Red, created by respected
+                                        tomato tomato breeder, Jeff Dawson, is a red sport of 'Amish Gold' (a cross between Amish Paste and Sungold), the reason this small tomato packs such a wallop of delicious, sweet flavors with a slightly tart finish.
+                                        This is a great patio or small garden tomato. Grows well in cooler, coastal regions. Perfect as a salad tomato or in a bowl for snacking. RARE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Amy's Sugar Gem.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Amy's Sugar Gem - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>71</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Developed by Jeff McCormack who crossed the small fruited 'Red Cherry' with the larger heirloom 'Tappy's Finest'. 'Amy's Sugar Gem' is named in appreciation of Amy Hereford whose grandmother "Tappy" introduced Jeff
+                                        to heirloom tomatoes in 1982. The 'Sugar Gem' portion of the name refers to the sweet flavor and the tiny light gold sparkles in the red skin. Our TomatoFest organic tomato seed produces indeterminate, regular-leaf,
+                                        tall, sprawling, vigorous tomato plants that yield HUGE crops of 2 oz., 1 1/2" golf ball sized, red, meaty, juicy tomatoes that have a small core and delicious sweet, well-balanced flavors. A perfect choice as a
+                                        snacking tomato, salad tomato or for tomato sauces. Sweet! "Candy-on-the-vine," not to be missed!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Anna Russian.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Anna Russian - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>An heirloom oxheart variety sent to Craig LeHoullier in 1989 from Brenda Hillenius, of Oregon, who got the seeds from her grandfather, Kenneth Wilcox, who received seeds from a Russian immigrant. Craig LeHoullier introduced
+                                        it to the SSE Yearbook in 1989. An excellent, gorgeous tomato. Early maturing for a heart-shaped tomato, the large, visually beautiful, pink-red fruit normally weighs about 14-16 oz. Superb rich old-fashioned, tomato
+                                        flavors with lots of juice.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Aunt Ginny's Purple.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Aunt Ginny's Purple - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>79</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple-Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A productive heirloom beefsteak tomato of German origin that was brought into circulation by Rick Burkhart of Indiana whose family has raised it for 25 years. Our organic tomato seeds produce big, indeterminate, vigorous,
+                                        potato-leaf tomato plants that yield abundant crops of 1-pound, deep-pink, juicy tomatoes with little cracking. Considered among the best heirloom tomatoes. Excellent tomato in salads and on sandwiches. Aunt Ginny's
+                                        Purple is an American favorite tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Aunt Lucy's Italian Paste.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Aunt Lucy's Italian Paste - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Originally from Italy via Toni Casell's Aunt Lucy. Produces indeterminate, regular-leaf tomato plants that yield abundant crops of 2", red, round, meaty tomatoes with classically delicious sweet/tart flavors so well
+                                        respected with the old Italian tomato varieties. Fruit contains few seeds. A wonderful tomato for tomato sauce or slicing into a tomato salad. RARE!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Aunt Ruby's Yellow Cherry.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Aunt Ruby's Yellow Cherry - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>First offered in the Seed Savers 1993 Yearbook by Bill Minkey of Darien, Wisconsin who received the seed from Ruby Arnold of Greeneville, Tennessee in 1992. Plants produce regular-leaf, vigorous and tall tomato plants
+                                        that yield copious amounts of 3/4-inch, round, yellow cherry tomatoes that are loaded with delicious, fruity, sweet/tart flavors. The perfect snacking tomato that is wonderful in salads or culinary dishes. Children
+                                        will love the sweetness of these snacks. RARE!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Azoychka.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Azoychka - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A very productive Russian heirloom found at the Bird Market in Moscow. ("Azoychka" is a woman's name.). An indeterminate, open-pollinated. regular-leaf tomato plant that produces an abundant crop (40-50 tomatoes per
+                                        plant) of smooth, 3-inch, 10-16 oz., slightly flattened oblate, meaty, yellow/orange tomatoes with a luscious sweet citrusy flavor. Azoychka has become one of the favorite in my garden for harvesting a crop for
+                                        market. Dependably productive, delicious and deservedly in demand. Unlike most yellow tomatoes this variety has a good acidic balance to its fruity sweetness resulting in lots of robust, complex flavors. A great
+                                        variety suited to coastal and both warm to cooler growing regions. Produces well into the season. Great for eating in salads, sliced into a sandwich, cooking in sauces or canning. 68-78 days to maturity. RARE!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Berwick German.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Berwick German - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>From a local greenhouse in Berwick, PA. Introduced by Bill Ellis in 1991. Irregular-shaped, round to oblong, (some say "half-hearted) 2 to 4-inch, red, meaty fruit with few seeds.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Big White Pink Stripe.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Big White Pink Stripe - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>95</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Bi-Colored</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Pale-peach colored 4-inch globe slicer with pinkish blush on blossom end and peach-cream colored flesh inside. Meaty fruits with tropical flavor similar to melon but slight sweet-tart tang.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Black Cherry.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Black Cherry - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>64</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Dark Red/Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>The only truly black cherry tomato. Our TomatoFest organic tomato seeds produce large, sprawling, indeterminate, regular-leaf, vigorous tomato plants that yield abundant crops in huge clusters of 1", round, deep purple,
+                                        mahogany-brown cherry tomatoes. Fruits are irresistibly delicious with sweet, rich, complex, full tomato flavors that burst in your mouth, characteristic of the best flavorful black tomatoes. Beautiful to mix with
+                                        other colored cherry tomatoes. Unique tomato variety. Disease resistant.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Black Krim.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Black Krim - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple-Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>(aka Black Crimson) Krim is Russian and Ukrainian for Crimea, which is a peninsula in the Ukraine. The heirloom tomato tomato Black Krim is named for it. This rare, and outstanding tomato yields 3-4" slightly flattened
+                                        dark-red (mahogany-colored) slightly maroon, beefsteak tomatoes with deep green shoulders. Green gel around seeds. Fantastic, intense, slightly salty taste (which is great for those not wanting to add salt to their
+                                        tomatoes). Black Krim is one of my best black tomatoes. Also suitable for container/patio garden. Perfect choice for slicing, salads and cooking. RARE!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Black Plum.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Black Plum - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Dark Red/Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Origin from Russian seedswoman Marina Danilenko. Sprawling indeterminate plant produces an abundant long and steady crop of 2", elongated, oval, plum-shaped fruits that are colored a beautiful deep-mahogany with dusky-green
+                                        shoulders and garnet red flesh. Fruit resembles a small paste tomato but with thinner walls. Unique, sweet, tangy, rich, complex flavors. Great for snacking off the vine, sliced and scattered into a salad (perhaps
+                                        with red and yellow cherry tomatoes), or making a rich, dark-colored pasta sauce.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Blondköpfchen.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Blondköpfchen - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>An heirloom tomato from eastern Germany. The name of this adorable heirloom cherry tomato means "little blonde girl". Produces big, leafy, indeterminate, regular-leaf tomato plants that yield a phenomenal amount of
+                                        1/2", grape-sized, brilliant yellow/gold, cherry tomatoes in clusters of 20-30. The vines are large and sprawling, so give them plenty of space. Blondköpfchen is undoubtedly one of the BEST TASTING cherry tomatoes.
+                                        Deliciously sweet with a slight citrusy tart finish. A Non-cracking, disease resistant tomato variety that grows well in most climates including cooler growing regions.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Brandywine, OTV.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Brandywine, OTV - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>72</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A potato-leaf heirloom named and released by Carolyn Male and Craig LeHoullier who state this tomato, "the best strain of Brandywine set apart from others by its smooth, creamy, almost buttery texture, and harmonious
+                                        sweet flavor." The fruits of this potato-leaf heirloom are rich red with a slight orange undertone and weigh an average of 1 lb. This variety is known to set fruit better than the Pink Brandywine. According to Carolyn
+                                        Male "The only Brandywine that seems to set fruits well in the south is OTV Brandywine, which is not a strain of Brandywine, but is the result of an accidental cross between Yellow Brandywine and an unknown male
+                                        parent." </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Britain's Breakfast.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Britain's Breakfast - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>78</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A unique and very high producing English indeterminate tomato variety. Produces a tomato plant with huge, wide trusses loaded with up to 70 bright-red, small, 2 oz., oval and very meaty mini paste tomatoes with pointed
+                                        ends. Hundreds of flowers on each truss. It's best to let only one truss develop because letting more than one truss develop will reduce the amount of tomato productivity of each. Very tasty tomatoes that deserve
+                                        a place in your tomato garden. A fine salad tomato or great for serving up in a bowl for snacking.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Broad Ripple Yellow Currant.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Broad Ripple Yellow Currant - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>78</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>yellow</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>This tomato variety was apparently found growing from the crack in a sidewalk in Indianapolis, Indiana in the mid 1900's by John Hartman. Produces big, indeterminate , regular leaf, tomato plants that yield hundreds
+                                        of of the cutest, very small, 1/2-inch small, almost translucent yellow cherry tomatoes borne in trusses of 6-8 tomatoes. These are very low-acid tomatoes that are deliciously sweet and perfect for popping in your
+                                        mouth as you walk through the garden. A great container tomato for growing on your patio or rooftop garden. A good tomato variety for cooler growing regions that produces well until frost.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Cerise Orange.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Cerise Orange - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>An heirloom tomato from Norbert Parreira, Helliner, France in 1992. Produces indeterminate, big, sprawling, regular leaf tomato plants that yield huge amounts of tiny, 1/2-inch, golden-orange cherry tomatoes with a
+                                        subtle striping borne in large clusters. A tomato with big, wonderful, well-balanced, sweet taste, bursting with a fruity sweetness similar to the very popular Sungold cherry tomato, but lower in acid. Great as
+                                        a beautiful salad tomato or perfect for snacking.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Chadwick Cherry.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Chadwick Cherry - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>78</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Heirloom cherry tomato named after the late master gardener, Alan Chadwick, originator of the bio-intensive method of gardening. Big, leafy vines yield prolific amounts of very flavorful, 1-inch, red cherry tomatoes
+                                        borne in vigorous clusters of six that burst in your mouth with rich flavors. Chadwick Cherry is a very popular cherry tomato with home gardeners and farmers markets. Thought to be the best cherry tomato available.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Chiapas Wild.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Chiapas Wild - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>69</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Originating from the state of Chiapas in Southern Mexico. This is an ancient heirloom tomato variety. Indeterminate, sprawling, regular leaf plant produces red, pea-sized, currant-cherry tomatoes that are very sweet.
+                                        Kids will love these delicious currant tomatoes. A long-keeping tomato great for salads and snacking.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Chinese.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Chinese - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>76</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Chinese heirloom tomato. A long red paste tomato shaped like a pepper. A 2 x 5-inch, almost seedless tomato with very good flavor.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Chocolate Stripes.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Chocolate Stripes - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>79</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Bi-Colored</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Large, indeterminate, regular-leaf tomato plants that yield a plentiful crop of 3-4 inch, mahogany colored with dark, olive green-striping (similar to black zebra). Fruits have delicious, complex, rich, sweet, earthy
+                                        tomato flavors. Chocolate Stripe, another desirable 'black tomato," is an excellent tomato and a fine choice for your tomato garden. Produces well into the autumn. A great sandwich tomato and salad tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Coração de Boi.jpg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Coração de Boi</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A tomato with incredible flavor and texture and few seeds. Late harvest, large fruits that weigh an average of 200 g. Variety with an indeterminate growth habit that needs cuttings for healthy production. A classic
+                                        in summer salads!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Crazy.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Crazy - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Fruits from this heirloom are borne from tall, hardy vines in clusters of six. Plum-sized,3/4-inch, round, red, cherry tomatoes are very sweet with a good acid balance.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Cream.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Cream</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>72</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple/Black, Yellow/Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Seeds given to Gary Ibsen of TomatoFest in 2015 by Gary Cass from the Big Island of Hawaii. Introduced commercially by TomatoFest Organic Tomato Seeds in 2016. Indeterminate, regular leaf plant produces abundant crop
+                                        of 1", light-yellow, cherry tomatoes with anthocyanin (blue) coloring on the shoulders. This is one of the very sweetest cherry tomatoes available and the fruit sweetens up early. Birds tend to love them more than
+                                        others. Very thin skin, so they need to be harvested carefully or they will crack.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Dixie Golden Giant.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Dixie Golden Giant - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>77</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A beefsteak heirloom grown by an Amish family since the early 1930's. It grows on large plants and yields big harvests of 1 to 2 pound, clear lemon-yellow fruits that occasionally have a pink blush on the blossom end.
+                                        Fabulously sweet, fruity taste and meaty texture.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Doochova Yellow Pepper.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Doochova Yellow Pepper - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>74</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A Russian heirloom tomato. Seeds sent to Gary Ibsen of TomatoFest by Rusian Doochov from the Ukrain a 4th generation farmer of tomatoes. He's known for having what is probably the largest private collection of rare
+                                        plants and vegetables in the Ukrain. Produces tall, regular leaf plants that yield lots and lots of 2-3", almost hollow, pale yellow, bell pepper shaped tomatoes. A wonderfully unique stuffing tomato. RARE!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Elbe.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Elbe - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>86</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Named after the Elbe River in Germany. This has been an old favorite heirloom tomato since 1889. Produces big, leafy, indeterminate, potato-leaf tomato plants that yield gorgeous 12-14 oz., 3 to 4-inch, yellow-orange,
+                                        beefsteak tomatoes with an abundance of delicious, fruity, sweet/tart flavors. A wonderful salad tomato and don't miss trying this for making golden tomato sauce. Suitable for cooler growing regions.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Ella's Pink Plum.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Ella's Pink Plum - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>72</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Short indeterminate plant producing an abundance of 2" jade-pink colored, plum-shaped fruit. Juicy with few seeds and very sweet, well-balanced flavors. Although a pretty tomato to look at, if you ate this with your
+                                        eyes closed, wonderful and delicious images are prompted through it's mouth-feel and taste.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Elmer's Old German.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Elmer's Old German - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>An old heirloom tomato from Germany. Produces very large, indeterminate, regular-leaf tomato plants that yield 1-2 pound (and more), deep-pink, heart-shaped tomatoes that have delicious, bold, sweet/acid tomato flavors
+                                        with very few seeds. An excellent slicer for eating fresh in salads and sandwiches. Rare!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Fruit Punch Cherry.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Fruit Punch Cherry - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>May be the ultimate of cherry tomatoes! Seeds sent to Gary Ibsen via Kenneth Cook via Doug Hillebrand of Sandusky, OH. Produces big, sprawling plants that yield a prolific crops of 1 oz., round, pink, thin-skinned fruit
+                                        that "achieves a new level of sugar-sweetness and a tangy 'true tomato' taste." Super fruity sweet. Surprisingly crack resistant, even in heavy rains, considering the delicate thin skin. This tomato will give you
+                                        pleasure. You will love it!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Glory of Moldova.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Glory of Moldova - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>95</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A prolific heirloom that yields 2", 4 oz., carrot-orange colored salad tomatoes that grow in clusters of six or more. Flavor is mildly sweet and flavorful. Makes a very tasty juice.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Gogoshari Striped.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Gogoshari Striped - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red Bi-Colored</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A Russian variety, introduced to North America by Andrey Baranovski from Minsk, Belarus in the 2002. Indeterminate regular leaf plants produce prolific amounts of 4-6 oz., 3-lobed, semi-hollow, red & yellow striped
+                                        fruits. A great stuffing tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Gold Rush Currant.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Gold Rush Currant - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>This strain was a selection by a Dutch seedsman. Produces large, indeterminate, regular-leaf tomato plants with wispy foliage that yield excellent, heavy sets of 1/4-inch tomatoes borne in trusses of 10-12. Excellent
+                                        sweet tomato flavor. A perfect snacking tomato or to adorn salads and culinary creations.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Golden Princess.jpg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Golden Princess - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early-Mid</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A US variety, relative of the old German tomato variety "Golden Queen" (Goldene Königin). Can grow up to 2.5m high. The very richly bearing plants must be well supported, otherwise the entire plant can buckle. As is
+                                        typical for cocktail tomatoes, this variety also forms many shoots, all of which are fully productive. However, it is advisable to only grow them with one or two shoots, otherwise you can quickly lose control of
+                                        the plant and its shoots will get out of hand. One single truss can carry up to 12 tomatoes. The fruits can reach a size of 5 cm, are particularly aromatic and have a slight sweetness. The relationship between acidity
+                                        and sweetness is very pleasant.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Grandma Mary's.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Grandma Mary's - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>(AKA Grandma Mary's Italian Paste, Grandma Mary's Paste) A family heirloom. Indeterminate, regular leaf plants yield very heavy crops of 1 1/2 oz., 3-inch long, red, meaty, paste tomatoes loaded with classic Italian
+                                        robust flavors. A great sauce tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Granny Cantrell's German Pink.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Granny Cantrell's German Pink - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Kentucky Family Heirloom. This was the only tomato grown by Lettie Cantrell of West Liberty since the 1940s. Lettie died in November 2005, at 96 years. Her tomato won a Best of Taste award in 2006 from over 100 entries.
+                                        Produces big, regular-leaf, indeterminate plants with wispy vines that yield wonderful, large, 1-2 pound, slightly-flattened, pink tomatoes. Delicious tomato for eating fresh, cooking or canning. A great sandwich
+                                        tomato.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Green Grape.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Green Grape - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Green-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>This old-fashioned tomato is an heirloom originally developed by Tom Wagner of the Tater Mater Seed Co. from crossing the Yellow Pear with Evergreen. The distinctive, 1-inch, yellowish green fruits are borne in clusters
+                                        of 6-12 that resemble large muscat grapes. Fruit has a translucent pale, lime-green on the inside. This variety has become popular in restaurants and markets because of their unique attractiveness and its tantalizing,
+                                        rich, tangy flavor. Great for snacking.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Grosse Lisse.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Grosse Lisse - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>This is a very popular variety in Australia. This tomato variety originated in America back in the 1860s, and was introduced in England by the name of "Trophy". It was later brought to Australia from England. Produces
+                                        big, indeterminate, regular leaf plants that yield 2" round, red, 6-12 oz, unblemished meaty tomatoes with good flavor. A very good canning or salad tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Hawaiian Currant.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Hawaiian Currant - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>79</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A sweet red, pea-sized currant tomato that holds fruit on clusters until all are ripe. A very sweet and tasty treat loved by chefs and gardeners alike. Hawaiian Currant tomatoes are a sure winner in children's gardens
+                                        around the world.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Hezhou.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Hezhou - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Seeds sent to Gary Ibsen from family farm in Zhengjiang province of China. Produces compact, indeterminate, regular-leaf tomato plants that bear an abundant crop of 2-inch, red, plum-shaped tomatoes with luscious, sweet
+                                        flavors. A fine salad tomato that also performs as a very good market tomato due to it's productivity, good looks and excellent taste. Rare!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Honey.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Honey - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Originally from Latvia. Produces indeterminate, regular-leaf, vigorous, tomato plants than bear abundant crops of 12 to 16-ounce, dark-pink, beefsteak tomatoes that show little or no cracking. Fruits have delicious,
+                                        sweet flavors that are harmonized with just the right amount of acidity. A wonderful slicing or salad tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Indigo Rose.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Indigo (Rose?)</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple-Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Indigo Rose has created a wave of enthusiasm among commercial farmers and gardeners to feature this in their gardens because of its stunning ornamental quality. Developed by Jim Myers at Oregon State University. Indigo
+                                        Rose stepped out as the first really dark purple tomato. According to Jim Meyers, Indigo Rose is the first tomato in the world that has anthocyanins in its fruit, a naturally occurring and powerful anti-oxidant
+                                        found in blueberries. Produces vigorous and hardy, compact, indeterminate plants that yield abundant crops of 1-2 oz., round tomatoes with dark purple ("black") skin that occurs on the portion of the fruit exposed
+                                        to sunlight while the fruit in the shade turns a dark red when mature. When mature the inside flesh turns a dark red and provides loads of well-balanced, complex and full range of almost plummy flavors. Sweet but
+                                        with a delicious tang. Must wait for these to ripen fully before eating if you eat them before ripe, when insides are green they are to acidic tasting. Reported to be more nutritious. Proven a good market tomato
+                                        for its stunning appearance and longer shelf life and flavor. Definitely a novelty tomato worth trying. U.S. PVP #201100302 and Canada PBR#14-8188</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Indische Fleisch.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Indische Fleisch - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>79</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple-Brown</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>From Prof. Klapprott who obtained seeds from a friend in the former East Germany. First offered in Seed Savers 1992 Yearbook by Curtis D. Choplin of South Carolina. Indeterminate regular leaf plant produces 3 to 4-inch,
+                                        exotic, flattened fruit, purple-brown (chocolate) color, with green shoulders. Good flavors and plentiful yield. Rare!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Japanese Black Trifele.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Japanese Black Trifele - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>81</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple-Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Russian origin. In Russia the Trifele varieties of tomatoes (of which there are several colors) are highly prized and command big prices. This short potato leaf plant yields prolific quantities of 6 oz. fruit that looks
+                                        like a beautiful mahogany-colored Bartlett pear with greenish shoulders. Very tasty flesh with a meaty core that produces luscious fruit all summer long. A work of art sliced out on a plate and a wonderful flavor
+                                        that possesses extraordinary rich and complex flavors. The Black Trifele is one of the blackest varieties available and is resistant to cracking.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Kalman's Hungarian Pink.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Kalman's Hungarian Pink - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>85</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A productive Hungarian heirloom imported by Kalman Lajvort of Edison, N.J. Wispy, indeterminate, regular leaf plant yields 2 x 4", 6-8 oz., oblong, pink fruit with a pointy end. Outstanding, sweet, rich flavor.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/La Carotina.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>La Carotina</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>(AKA Carotina) French parent of Caro Orange. Prolific plant yielding 2-inch, 7 oz., round, orange tomatoes, hi in carotene with light peach-orange juicy meat and lots of well-balanced citrusy flavors with a hint of
+                                        carrot. YUM!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Marz Round Green.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Marz Round Green - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Green</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A natural cross by Jeff Dawson. Produces indeterminate, regular-leaf tomato plants that yield a generous crop of 2-inch, round, lime-green, tomatoes with darker green shoulders. Wonderful, tangy-sweet flavors makes
+                                        this tomato variety a great addition to a tomato salad. Rare!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Millefleurtruss.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Millefleur</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>CENTIFLOR TOMATO! A whole new class of tomato with a unique structure: the highly branched trusses have literally hundreds and hundreds of flowers on them. The flower trusses are about two feet across, bearing tomates
+                                        in a huge grapelike cluster! These are not at all like currant tomatoes. The fruit are much bigger - 3/4 of an inch across - and made in much bigger bunches. 'Millefleur', a centiflor vine tomato variety developed
+                                        by Alan Kapuler of Peace Seeds, from a cross made by his daughter Kusra. They really do make hundreds of translucent yellow tomatoes on a single truss. Each fruit is about 3/4 inch across and they're great in salads
+                                        or munched straight off the plant.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Montserrat.jpg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Montserrat</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>The Montserrat tomato is one of the best and most expensive tomatoes sold freshly, it is mainly sold in Catalonia where it is a delicacy. They are also called "rose tomatoes", as when they are cut up they are reminiscent
+                                        of a rose. These beefsteak tomatoes are flat-round and ribbed, ripen from yellow/pink to red and can weigh up to 200 g. The fruit flesh is very flavourful and slightly sweet. As these tomatoes have cavities, they
+                                        are particularly suitable for stuffing, but can also be enjoyed in a fresh salad. Low productive plant! Rare-ish!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Muchamiel.jpg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Muchamiel</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Red tomato with a globose shape and slightly flat, fleshy and with deep red flesh. Medium-sized fruits (200 - 250 grams) of hard skin resistant to cracking. Variety of medium cycle market and excellent productivity.
+                                        Indeterminate and vigorous growth. Fruits of red color, green neck, globose shape lying down. The Muchamiel or Mutxamel tomato (“Tomato Mutxamelero”) is a tomato variety native to Alicante, it has always had a recognized
+                                        prestige in the market for its smell and taste of real tomato being a very traditional variety known and cultivated throughout Spain. Very rustic and with big and boring fruits. The plant is characterized by being
+                                        very resistant to unfavorable conditions. It is one of the most emblematic and recognized varieties in the province of Alicante from where it originates, specifically from the town of Mutxamel, although its cultivation
+                                        has been abandoned due to susceptibility to different types of viruses. In addition, consumers report the loss of flavor in the hybrids currently marketed, demanding the recovery of the traditional variety. The
+                                        Muchamiel tomato stands out for its large size, its green neck, its thin skin, and it is very fleshy and sweet. The strong, vigorous and rustic tomato is of indeterminate growth. It is a variety of tomatoes that
+                                        you can easily grow in an urban garden at home in pots.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Myona.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Myona - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>95</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Reportedly the name came from an Italian vegetable stand proprietor, when asked what kind of tomato it was, he replied "It's a my owna!" hence the name Myona. Indeterminate, regular leaf plants produce an abundant amount
+                                        of medium sized, red with pointy end plum tomatoes that are meaty and flavorful. Great for sauce and canning due to its rich, slightly acidic flavor.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="idt_varieties_block">
+                <div class="idt_varieties">
+                    <img src="images/Noire de Crimee.jpg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Noire de Crimee</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Purple-Black</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Regular leaf plants, round oblate dark purple/black fruits with dark shoulders, 6-10 oz, excellent flavor. Family heirloom from Russia, a strain of Black Krim. Carolyn Male, Joe Bratka, Bill Minkey and Craig LeHoullier
+                                        received Nore de Crimee seeds from Norbert Parreira, France in 1992, in a large seed exchange.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="idt_varieties">
+                    <img src="images/Pakenham Pear.jpeg" alt="Tomato image">
+                    <div class="idt_info">
+                        <h4>Pakenham Pear - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Family heirloom from Australia. Seeds sent to Gary Ibsen from Savior Schembri, Victoria, Australia. Indeterminate, regular leaf plant produces high yields of 4-6 oz., 2-3", red, attractively unique, pear-shaped, paste
+                                        tomatoes with good. well-balanced, mild flavors. A good sauce and salad tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <hr>
+
+    <section class="idt_dt_sections">
+        <div id="Determinate" class="varieties_sections">
+            <p>Determinate Tomatoes</p>
+        </div>
+        <section>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Alaskan Fancy.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Alaskan Fancy - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>54</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Very Erly</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Size:</th>
+                                    <td>SEMI-DETERMINATE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Alaskan Fancy was bred for short growing seasons with cooler weather. The earliest plum-shaped tomatoes available. Seeds produce short, bushy, regular-leaf plants that yield abundant crops of 1-2 oz., red, juicy, tomatoes
+                                        with luscious flavors.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Amateur.jpg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Amateur</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>The Amateur has been grown in the UK for at least 65 years and reliability is one of its key attributes. In our very variable summer weather this is one variety which produces a crop when others are likely to fail.
+                                        This variety however ripens very well on a window sill which extends the cropping period considerably. This variety of tomato produces fruit which are a typical tomato red on the outside and orange / red on the
+                                        inside. The fruits are about average sized, typically 35g per tomato. Taste is neither sweet nor acidic and it is full of tomato flavours.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Banana Legs.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Banana Legs - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>72</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Very prolific and long season tomato plant producing 4-inch long, bright yellow, meaty, banana-shaped tomatoes with light banana-colored striping and a slight nipple on the end. Sweet fruity flavors. Great for slicing
+                                        into salads. Good sauce tomato. A low acid tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Cream Sausage.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Cream Sausage - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>73</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>This regular leaf, determinate, very productive, bush plant, that does not need staking, is a prolific producer of 3-inch long, creamy white-yellow, sausage type paste tomatoes with small nipple on blossom end.. Very
+                                        good sweet flavors. Great for making a sweet salsa or a delicious yellow pasta sauce.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Dwarf Hannah's Prize.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Dwarf Hannah's Prize - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Regular, rugose-leaf, dwarf plant produces abundant crop of 6-12 oz., oblate, red with light striping, tomatoes with very nice, well-balanced, slightly tart flavors. History: Developed by the 'Dwarf Tomato Project.'
+                                        (Softy family) The Softy family was created by Sherry Long in 2012 by crossing German Red Strawberry with Dwarf Stone. Dwarf Hannah's Prize was selected and named by Susan Oliverson, who carried out essentially
+                                        all of the remaining stabilization effort, with a bit of work from Dee Sackett and Craig LeHoullier.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Dwarf Pink Passion.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Dwarf Pink Passion - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>65</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Determinate, vigorous, dwarf plants with rugose, regular leaf foliage produce heavy yields of 4-8 oz., pink, medium-sized, strongly heart-shaped fruits with delightful, balanced, sweet flavors. History: Developed by
+                                        members of the Dwarf Tomato Project as a selection out of the "Nosey family" from a cross between Roza Vetrov and Anna Banana Russian made by Patrina Nuske Small). It was further selected and named by Linda Black.
+                                        Among those who contributed to stabilizing this variety were Linda, Charlotte Burk, Sherry Long, Paul Anguiano, Amanda Fischer, Jessica Dubin, Dan Follett, Gina McDermott, Bill Minkey, and Craig LeHoullier. Introduced
+                                        in 2015. This variety is associated with the Open Source Seed Initiative (OSSI).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Elfin.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Elfin - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>54</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Very Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Vigorous short, bushy plant that produces massive bunches of 3/4-inch, grape-like, (plum to pear shaped) fruits. Extra flavorful and crisp snacking tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Gill's All Purpose.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Gill's All Purpose - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>78</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Size:</th>
+                                    <td>SEMI-DETERMINATE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Gill's All-Purpose was bred in 1947 by the Gill Brothers Seed Company, in Portland, Oregon. Originally a cross between Wasatch Beauty and Pepper tomato. Produces Semi-Determinate, regular-leaf plants that yield very
+                                        large crops of 2 1/2" - 3", deep-red tomatoes with rich tomato flavor. A perfect all 'round variety for a canning tomato, juicing, slicing and eating fresh off the vine. YUM! Disease resistant.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Gold Nugget Cherry.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Gold Nugget Cherry - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>54</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Very Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Developed by Dr. James Baggett, Oregon State University. Produces extra-early, determinate, compact plants (54 days) that bear prolific amounts of early setting golden, 1", round to oval, deep yellow to orange, cherry
+                                        tomatoes that are unusually delicious with well-balanced sweet flavors. A wonderful cherry tomato for snacking. Good variety for growing for market. Suitable for cooler climates. Winner of the prestigious British
+                                        Horticultural Society (RHS) Award of Garden Merit.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Grushovka.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Grushovka - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>65</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Siberian origin. Bushy, regular leaf determinate yields delicious, small (2-3-inch) plum-shaped, pink/red tomatoes on small plants. A very good choice for container gardening. Good canning tomato. Very, very tasty.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Lime Green Salad.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Lime Green Salad - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>58</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Green-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Early</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Size:</th>
+                                    <td>SEMI-DETERMINATE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Bred by Tom Wagner and introduced by Tim Peters (CV Peters Seed) in the 1980, who named it "Lime Green Salad," not knowing that Tom had already named it. Small plants that produce abundant sprays of round, lime-green
+                                        tomatoes that ripen further to an amber color. Great for growing in containers since plants stay small yet provide a big harvest. Fruits are 3 to 5 oz., chartreuse inside, full of juice and a luscious, tangy flavor.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Long Keeper.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Long Keeper - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Size:</th>
+                                    <td>SEMI-DETERMINATE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Long Keeper (AKA Burpee's Long Keeper) was introduced by Burpee in 1979. A perfect tomato variety for winter storage. This heirloom is best planted in early summer for late harvest. Hearty plant produces huge amounts
+                                        of 6 oz., round fruits. Popular for it's good taste and long storage ability. Because of slow-ripening qualities fruits become ripe1-3 months after harvesting. If picked in late fall, after fruit reaches a pale
+                                        pink blush, unblemished fruit that is stored without touching, at around 65 degrees, can last for 4 months. Light orange-red color when ripe, with pink flesh.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Milano Plum.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Milano Plum - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>A respected Italian heirloom. Produces short, compact and bushy, determinate plants that yield large trusses of red, elongated, sausage-shaped, paste tomatoes. Milano Plum tomatoes have firm flesh with very delicious
+                                        sweet flavor. A perfect sauce tomato.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Minibel.jpg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Minibel</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Bite-sized cherry tomatoes with an irresistible, sweet flavour. One of the easiest varieties to grow, with a compact (30cm tall) and bushy growing habit that requires little or no maintenance. They're perfect for growing
+                                        outdoors in patio containers and produce masses of sweet and tasty cherry tomatoes. Sow indoors from March to April, ready to harvest from August to October.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Nebraska Wedding.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Nebraska Wedding - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow-Orange</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>An old great Plains heirloom. An old favorite. Plants yield an abundant crop of globe-shaped deep-orange weighing up to 12 oz..fruits with good sweet/acid balance and lots of flavor.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/New Big Dwarf.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>New Big Dwarf - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>90</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Pink</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Late</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Introduced by Isbell's Seed Company in 1919 by selecting crosses from crosses of 'Ponderosa' with 'Dwarf Champion'. Indeterminate (tree-type), regular leaf, 2'-3' dwarf plant produces lots of large 1-lb., slightly flattened,
+                                        deep pink tomatoes. Perfect for patio gardening in pots. Very flavorful.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="dt_varieties_block">
+                <div class="dt_varieties">
+                    <img src="images/Nikolayev Yellow Cherry.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Nikolayev Yellow Cherry - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>70</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Yellow</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Size:</th>
+                                    <td>SEMI-DETERMINATE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Russian cherry tomato. Semi-determinate, regular leaf plant produces huge amounts of 3/4-inch, bright-yellow, round to oval cherry tomatoes. Another Russian variety that produces fruit even in cooler growing regions.
+                                        Disease resistant. RARE!</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dt_varieties">
+                    <img src="images/Long Keeper.jpeg" alt="Tomato image">
+                    <div class="dt_info">
+                        <h4>Long Keeper - Heirloom Tomato</h4>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Days:</th>
+                                    <td>75</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Color:</th>
+                                    <td>Red</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Season:</th>
+                                    <td>Mid-Season</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Size:</th>
+                                    <td>SEMI-DETERMINATE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Description:</th>
+                                    <td>Long Keeper (AKA Burpee's Long Keeper) was introduced by Burpee in 1979. A perfect tomato variety for winter storage. This heirloom is best planted in early summer for late harvest. Hearty plant produces huge amounts
+                                        of 6 oz., round fruits. Popular for it's good taste and long storage ability. Because of slow-ripening qualities fruits become ripe1-3 months after harvesting. If picked in late fall, after fruit reaches a pale
+                                        pink blush, unblemished fruit that is stored without touching, at around 65 degrees, can last for 4 months. Light orange-red color when ripe, with pink flesh.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <p class="designer">Website design: Jana Bahner</p>
+        <p class="ga-link">Final project for <a href="https://generalassemb.ly/education/front-end-web-development" target="_blank">General Assembly's Front-End Web Development Course</a></p>
+        <p><a href="mailto:jana.b.chauhan@gmail.com">jana.b.chauhan@gmail.com</a></p>
+        <p>&copy; 2022</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
